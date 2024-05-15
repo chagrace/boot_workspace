@@ -1,0 +1,5 @@
+package com.sds.movieapp.model.cs.notice;
+
+public interface NoticeService {
+
+}

@@ -1,0 +1,39 @@
+package com.sds.movieapp.model.cs.notice;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.sds.movieapp.domain.Notice;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Repository
+public class MongoNoticeDAO implements NoticeDAO{@Override
+	public int selectCount() {
+		return 0;
+	}
+
+	@Override
+	public List selectAll(Map map) {
+		return null;
+	}
+
+	@Override
+	public void insert(Notice notice) {
+		
+	}
+
+	@Override
+	public void update(Notice notice) {
+		
+	}
+
+	@Override
+	public void delete(Notice notice) {
+		
+	}
+
+}

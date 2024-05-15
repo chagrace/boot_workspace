@@ -1,0 +1,9 @@
+package com.sds.movieapp.model.recommend;
+
+import java.util.List;
+import java.util.Map;
+
+public interface MovieDocDAO {
+	public int selectCount(); //총 레코드 수
+	public List selectAll(Map map);
+}

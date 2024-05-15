@@ -1,0 +1,11 @@
+package com.sds.movieapp.model.comments;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+public class MongoCommentsDAO implements CommentsDAO{
+
+	public void insert(CommentsDoc commentsDoc) {
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.sds.movieapp.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sds.movieapp.domain.Member;
+import com.sds.movieapp.domain.Movie;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RestController
+public class RestMovieController {
+	
+	//영화평 등록 요청 처리
+	@PostMapping("/movie/comments")
+	public ResponseEntity regist(Member member, Movie movie) {
+		//영화평 작성자
+		log.debug("member_idx" + movie.getMovie_idx());
+		//장르
+		for() {
+			
+		}
+		//제작 국가정보
+		//감독
+		//배우
+		//영화평
+		//개봉일
+		
+		
+		return null;
+	}
+
+}

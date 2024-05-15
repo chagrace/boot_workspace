@@ -1,0 +1,15 @@
+package com.sds.testapp.model.board;
+
+import java.util.List;
+import java.util.Map;
+
+import com.sds.testapp.domain.Board;
+
+public interface BoardService {
+	public List selectAll(Map map);
+	public Board select(int board_idx);
+	
+	public void insert(Board board); //int로 하는 이유는? SqlSessionTemplate를 사용하지 않기 때문에 int 반환
+	public void update(Board board);
+	public void delete(Board board);
+}

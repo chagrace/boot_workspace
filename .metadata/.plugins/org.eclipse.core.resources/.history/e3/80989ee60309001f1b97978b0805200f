@@ -1,0 +1,43 @@
+package com.sds.movieapp.model.cs.notice;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.sds.movieapp.domain.Notice;
+
+@Service
+public class NoticeServiceImpl implements NoticeService{
+
+	@Override
+	public int selectCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List selectAll(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insert(Notice notice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Notice notice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Notice notice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

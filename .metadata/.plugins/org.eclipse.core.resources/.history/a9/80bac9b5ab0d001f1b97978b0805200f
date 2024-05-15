@@ -1,0 +1,16 @@
+package com.sds.movieapp.model.recommend;
+
+import org.springframework.stereotype.Repository;
+
+import com.sds.movieapp.domain.SentimentDic;
+
+@Repository
+public class SentimentDicDAOImpl implements SentimentDicDAO{
+
+	@Override
+	public SentimentDic select(String word) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,53 @@
+package com.sds.movieapp.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sds.movieapp.domain.Actor;
+import com.sds.movieapp.domain.Director;
+import com.sds.movieapp.domain.Genre;
+import com.sds.movieapp.domain.Member;
+import com.sds.movieapp.domain.Movie;
+import com.sds.movieapp.domain.Nation;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RestController
+public class RestMovieController {
+	
+	//영화평 등록 요청 처리
+	@PostMapping("/movie/comments")
+	public ResponseEntity regist(Member member, Movie movie) {
+		//영화평 작성자
+		log.debug("member_idx " + member.getMember_idx());
+		//장르
+		for(int i=0; i<movie.getGenres().size(); i++) {
+			Genre genre = movie.getGenres().get(i);
+			log.debug("장르명 " + genre.getGenreNm());
+		}
+		//영화명
+		log.debug("영화명 "+ movie.getMovieNm());
+		//국가정보
+		for(int i=0; i<movie.getNations().size(); i++) {
+			Nation nation = movie.getNations().get(i);
+			log.debug("장르명 " + nation.getNationNm());
+		}
+		//감독
+		for(int i=0; i<movie.getDirectors().size(); i++) {
+			Director director = movie.getDirectors().get(i);
+			log.debug("감독명 " + director.getPeopleNm());
+		}
+		//배우
+		for(int i=0; i<movie.getActors().size(); i++) {
+			Actor actor = movie.getActors().get(i);
+			log.debug("배우명 " + actor.getPeopleNm());
+		}
+		//영화평
+		log.debug(null)
+		
+		return null;
+	}
+
+}

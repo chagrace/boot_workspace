@@ -1,0 +1,13 @@
+package com.sds.movieapp.model.member;
+
+import com.sds.movieapp.domain.Sns;
+
+public class SnsServiceImpl implements SnsService{
+
+	@Override
+	public Sns selectByName(String sns_name) {
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.sds.movieapp.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.sds.movieapp.domain.MovieType;
+import com.sds.movieapp.model.movie.MovieService;
+
+
+//메인과 관련된 요청을 처리하는 하위 컨트롤러
+@Controller
+public class MainController {
+	
+	@Autowired
+	private MovieService movieService;
+	
+	@GetMapping("/")
+	public String getMain(Model model) {
+		List<MovieType> movieTypeList= movieService.getMovieTypeList();
+		model.addAttribute(movieTypeList);
+		return "main/index";
+	}
+}

@@ -1,0 +1,17 @@
+package com.sds.movieapp.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class RestMemberController {
+	
+	@GetMapping("/rest/member/authform/{sns}")
+	public ResponseEntity getLink(@PathVariable("sns") String sns) {
+		
+		return null;
+	}
+
+}

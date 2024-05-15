@@ -1,0 +1,13 @@
+package com.sds.movieapp.model.comments;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+public class MongoCommentsDAO implements CommentsDAO{
+
+	@Override
+	public void insert(CommentsDoc commentsDoc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

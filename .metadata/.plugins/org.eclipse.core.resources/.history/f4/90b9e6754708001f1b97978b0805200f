@@ -1,0 +1,41 @@
+package com.sds.movieapp.model.member;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sds.movieapp.domain.Member;
+import com.sds.movieapp.domain.Role;
+import com.sds.movieapp.domain.Sns;
+
+@Service
+public class MemberServiceImpl implements MemberService{
+	
+	@Autowired
+	private SnsDAO snsDAO;
+	
+	@Autowired
+	private RoleDAO roleDAO;
+	
+	@Autowired
+	private MemberDAO memberDAO;
+	
+	@Autowired
+	private MemberDetailDAO memberDetailDAO;
+
+	@Override
+	public void regist(Member member) {
+		Sns sns = snsDAO.selectByName(member.getSns().getSns_name());
+		member.setSns(sns);
+		
+		Role role = roleDAO.selectByName(member.getRole().getRole_name());
+		member.setRole(role);
+		
+		int result = memberDAO.insert(member);
+		
+		if(result < 1) {
+			throw new MemberException("회원 등록 실패");
+		}
+	}
+	
+	
+}

@@ -1,0 +1,9 @@
+package com.sds.movieapp.model.comments;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+public interface CommentsDocDAO {
+	
+	public void insert(CommentsDoc commentsDoc);
+
+}

@@ -1,0 +1,29 @@
+package com.sds.movieapp;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
+		
+		//필터링 할 uri 명시 (람다식)
+		httpSecurity
+			.authorizeHttpRequests(
+					(auth)->auth
+					.requestMatchers("/site/**","/").permitAll()
+					.requestMatchers("/cs/notice/list").hasRole("USER") //권한명은 개발자가 회원가입시 지정하면됨
+			);
+		httpSecurity
+			.formLogin((auth)->
+				auth.loginPage("/member/loginform").loginProcessingUrl("/member/login") //19번줄에 걸린 애들이 보게 될 페이지
+			);
+		
+		return httpSecurity.build();
+	}
+	
+}

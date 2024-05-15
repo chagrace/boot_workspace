@@ -1,0 +1,21 @@
+package com.sds.movieapp.model.comments;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+public class MongoCommentsDAO implements CommentsDAO{
+
+	@Autowired
+	private MongoTemplate mongoTemplate;
+	
+	public void insert(CommentsDoc commentsDoc) {
+		try {
+			mongoTemplate.insert(commentsDoc);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

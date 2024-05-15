@@ -1,0 +1,21 @@
+package com.sds.movieapp.model.recommend;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.mahout.cf.taste.impl.model.GenericPreference;
+import org.apache.mahout.cf.taste.model.DataModel;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class CustomModel {
+	private DataModel dataModel;
+	
+	public CustomModel(List<CommentsDoc> commentsList) {
+		Map<Long, List<GenericPreference>> preferMap = new HashMap();
+	}
+}

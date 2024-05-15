@@ -1,0 +1,34 @@
+package com.sds.movieapp.model.recommend;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.mahout.cf.taste.impl.common.FastByIDMap;
+import org.apache.mahout.cf.taste.impl.model.GenericItemPreferenceArray;
+import org.apache.mahout.cf.taste.impl.model.GenericPreference;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.model.PreferenceArray;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class CustomModel {
+	private DataModel dataModel;
+	
+	public CustomModel(int member_idx, List<CommentsDoc> commentsList) {
+		Map<Long, List<GenericPreference>> preferList = new HashMap();
+		List<GenericPreference> preferlist = new ArrayList();
+		for(CommentsDoc commentsDoc: commentsList) {
+			GenericPreference prefer = null;
+			prefer = new GenericPreference(commentsDoc.getMemeber_idx(), commentsDoc.getMovie_idx(), commentsDoc.getScore());
+			preferlist.add(prefer);
+		}
+		preferMap.put((long)member_idx, preferlist);
+		FastByIDMap<PreferenceArray> userData = new FastByIDMap();
+		userData.put(member_idx, new GenericItemPreferenceArray(preferList));
+	}
+}

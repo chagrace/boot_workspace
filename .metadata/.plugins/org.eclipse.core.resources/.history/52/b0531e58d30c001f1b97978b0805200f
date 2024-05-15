@@ -1,0 +1,7 @@
+package com.sds.movieapp.model.comments;
+
+public interface CommentsDAO {
+	
+	public void insert();
+
+}

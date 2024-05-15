@@ -1,0 +1,16 @@
+package com.sds.movieapp.sns;
+
+import com.sds.movieapp.domain.Member;
+import com.sds.movieapp.model.member.MemberDAO;
+import com.sds.movieapp.model.member.MemberService;
+
+public class MemberServiceImpl implements MemberService{
+	
+	private MemberDAO memberDAO;
+	
+	public void regist(Member member) {
+		
+		memberDAO.insert(member);
+	}
+
+}

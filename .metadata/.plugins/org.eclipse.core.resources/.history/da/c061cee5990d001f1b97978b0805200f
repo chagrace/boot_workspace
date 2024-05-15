@@ -1,0 +1,5 @@
+package com.sds.movieapp.controller;
+
+public class RestCommentsController {
+
+}

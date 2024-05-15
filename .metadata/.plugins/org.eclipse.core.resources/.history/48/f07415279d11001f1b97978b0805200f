@@ -1,0 +1,4 @@
+spring.application.name=ConfigServer
+
+#외부의 서버(MSA를 이루고 있는 각각의 프로젝트 어플리케이션) 들에게 정보를 제공해주기 위한 서버의 설정정보
+server.port=9000;

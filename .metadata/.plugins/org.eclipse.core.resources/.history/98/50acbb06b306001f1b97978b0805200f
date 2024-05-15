@@ -1,0 +1,15 @@
+package com.sds.movieapp.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class MovieController {
+	
+	@GetMapping("movie/detail")
+	public String getDetail(@RequestParam(value="movie_idx", defaultValue="0") int movie_idx) {
+		
+		return "main/detail";
+	}
+}

@@ -1,0 +1,24 @@
+package com.sds.movieapp;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
+		
+		//필터링 할 uri 명시 (람다식)
+		httpSecurity
+			.authorizeHttpRequests(
+					(auth)->auth
+					.requestMatchers("/site/**","/").permitAll()
+			);
+		
+		return httpSecurity.build();
+	}
+	
+}

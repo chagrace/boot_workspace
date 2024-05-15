@@ -1,0 +1,21 @@
+package com.sds.movieapp.model.comments;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sds.movieapp.domain.CommentsDoc;
+
+import kr.co.shineware.nlp.komoran.core.Komoran;
+
+@Service
+public class CommentsServiceImpl implements CommentsService{
+
+	@Autowired
+	private Komoran komoran;
+	
+	@Override
+	public void registComments(CommentsDoc commentsDoc) {
+		
+	}
+
+}

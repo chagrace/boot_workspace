@@ -1,0 +1,5 @@
+package com.sds.movieapp.document;
+
+public class Member {
+
+}

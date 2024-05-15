@@ -1,0 +1,5 @@
+package com.sds.movieapp.domain;
+
+public class SentimentDic {
+
+}

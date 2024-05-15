@@ -1,0 +1,26 @@
+package com.sds.movieapp.model.recommend;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.sds.movieapp.domain.CommentsDoc;
+import com.sds.movieapp.domain.MovieDoc;
+import com.sds.movieapp.model.comments.CommentsDocDAO;
+
+@Service
+public class RecommendServiceImpl implements RecommendService{
+
+	private CommentsDocDAO commentsDocDAO;
+	
+	@Override
+	public List getList(int member_idx) {
+		List<CommentsDoc> commentsList = commentsDocDAO.selectAllByMember(member_idx);
+		Map<Long, MovieDoc> metadataMap = new HashMap();
+		
+		return null;
+	}
+
+}
